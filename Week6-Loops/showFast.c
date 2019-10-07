@@ -1,7 +1,7 @@
 /*
     Name: Steve Spicklemire
     Date: Oct 3, 2019
-    Desc: What happens when you run again quickly?
+    Desc: Just show me the first "random" number.
 */
 
 #include "stdio.h"
