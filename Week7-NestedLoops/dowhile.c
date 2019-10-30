@@ -8,12 +8,12 @@
 
 int main(){
     
-    int i=-1;
-
+    int i=0;
+    const int N=10;
+    
     do {
-        i += 1;
         printf("i = %d\n", i);
-    } while (i<=0);
+    } while (i<N);
     
     printf("Done.\n");
     
