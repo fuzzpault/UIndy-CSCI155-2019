@@ -1,7 +1,7 @@
 /*
-Pointers to Structures.
+Example Struct with PPM image.
 Steve Spicklemire
-Nov 4, 2019
+Nov 6, 2019
 */
 
 #include <stdio.h>
@@ -41,7 +41,9 @@ int main() {
                     myImage.width, 
                     myImage.height, 
                     myImage.max_value);
-                    
+
+    // read pixel data in from PPM file
+
     for (row = 0; row < myImage.width; row++) {
         for (col = 0; col < myImage.height; col++) {
             scanf("%d", &pixVal); // scan in red
@@ -53,6 +55,8 @@ int main() {
         }
     }
     
+    // Now write only the "red" data out
+
     for (row = 0; row < myImage.width; row++) {
         for (col = 0; col < myImage.height; col++) {
             printf("%d\n",myImage.pixels[col][row].red);
