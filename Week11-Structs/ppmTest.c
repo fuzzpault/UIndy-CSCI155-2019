@@ -21,12 +21,12 @@ typedef struct _imagePPM {
     int width;      // number of columns
     int height;     // number of rows
     int max_value;  // maximum intensity of RGB components
-    Pixel pixels[MAXWIDTH][MAXHEIGHT]; // the actual color pixel data
+    Pixel pixels[MAXWIDTH][MAXHEIGHT]; // the actual color pixel data 
 } ImagePPM;
 
 int main() {
     
-    ImagePPM myImage;
+    ImagePPM myImage; // allocated on the stack this limits max image size!
     int row = 0;
     int col = 0;
     int pixVal = 0;
@@ -42,10 +42,10 @@ int main() {
                     myImage.height, 
                     myImage.max_value);
 
-    // read pixel data in from PPM file
+    // read all pixel data in from PPM file
 
-    for (row = 0; row < myImage.width; row++) {
-        for (col = 0; col < myImage.height; col++) {
+    for (row = 0; row < myImage.height; row++) {
+        for (col = 0; col < myImage.width; col++) {
             scanf("%d", &pixVal); // scan in red
             myImage.pixels[col][row].red = pixVal;
             scanf("%d", &pixVal); // scan in green
@@ -57,11 +57,11 @@ int main() {
     
     // Now write only the "red" data out
 
-    for (row = 0; row < myImage.width; row++) {
-        for (col = 0; col < myImage.height; col++) {
+    for (row = 0; row < myImage.height; row++) {
+        for (col = 0; col < myImage.width; col++) {
             printf("%d\n",myImage.pixels[col][row].red);
             printf("0\n0\n");
         }
     }
-        return 0;
+    return 0;
 }
