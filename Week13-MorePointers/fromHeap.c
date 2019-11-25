@@ -23,6 +23,7 @@ int main(int argc, char *argv[]){
 
     printf("Whee! We got it.\n");
     free(largeMemory);
+    largeMemory = NULL;
   } else {
     printf("Dang. Too bad.\n");
   }
