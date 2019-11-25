@@ -10,6 +10,7 @@ Nov 13, 2019
 int main() {
     
   int* x = NULL;
-  *x = 3
+  *x = 3;
+
   return 0;
 }
