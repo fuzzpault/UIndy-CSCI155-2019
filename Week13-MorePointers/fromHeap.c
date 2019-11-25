@@ -13,9 +13,9 @@ int main(int argc, char *argv[]){
     return 0;
   }
 
-  int size = atoi(argv[1]);
+  long size = atol(argv[1]);
   
-  printf("Attempting to allocate %d integers\n", size);
+  printf("Attempting to allocate %ld integers\n", size);
 
   int *largeMemory = (int *)malloc(sizeof(int)*size);
 
