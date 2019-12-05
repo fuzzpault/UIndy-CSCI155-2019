@@ -77,6 +77,7 @@ double findMaxLuminosity(ImagePPM *anImage){
             if (luminosity(p)>maxLum) {
                 maxLum = luminosity(p);
             }
+	    p++;
         }
     }
     return maxLum;
