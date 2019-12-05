@@ -38,6 +38,8 @@ int scanImage(ImagePPM *anImage) {
     scanf("%d", &(anImage->height));
     scanf("%d", &(anImage->max_value));
     
+    // now allocate an array large enough to hold the pixel data for this image.
+    
     anImage->pixels = (Pixel *)malloc(sizeof(Pixel)*anImage->width*anImage->height);
     
     if (anImage->pixels == NULL) {
@@ -77,7 +79,7 @@ double findMaxLuminosity(ImagePPM *anImage){
             if (luminosity(p)>maxLum) {
                 maxLum = luminosity(p);
             }
-	    p++;
+            p++;
         }
     }
     return maxLum;
@@ -85,8 +87,8 @@ double findMaxLuminosity(ImagePPM *anImage){
 
 int main() {
     
-    ImagePPM myImage; // allocated on the stack this limits max image size!
-    // Now write only the "red" data out
+    ImagePPM myImage; // alloc an image structure on the stack with no pixels
+
     if (scanImage(&myImage) == 0) {
         printf("Ack! failure.\n");
         return -1;
