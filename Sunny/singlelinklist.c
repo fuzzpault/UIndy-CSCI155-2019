@@ -142,7 +142,7 @@ void insert_at_end(node** start, int data)
 //Insert a node at the intermediate position of the link list
 void insert_at_mid(node** start, int data)
 {
-    node *newnode, *temp, *prev;
+    node *newnode, *temp;
     int pos, nodectr, ctr = 1;
     newnode = getnode(data);
     printf("\n Enter the position: ");

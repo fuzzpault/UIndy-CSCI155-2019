@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "singlelinklist.c"
 
 
@@ -26,7 +26,7 @@ int menu()
 }
 
 //Driver function for the single link list operations
-void main()
+int main()
 {
     node* start = NULL;
     int ch, n, data;
@@ -49,19 +49,19 @@ void main()
 
             case 2:
                 printf("\n Enter data: ");
-                scanf("%d", data);
+                scanf("%d", &data);
                 insert_at_beg(&start, data);
                 break;
             
             case 3:
                 printf("\n Enter data: ");
-                scanf("%d", data);
+                scanf("%d", &data);
                 insert_at_end(&start, data);
                 break;
 
             case 4:
                 printf("\n Enter data: ");
-                scanf("%d", data);
+                scanf("%d", &data);
                 insert_at_mid(&start, data);
                 break;
 
@@ -101,5 +101,5 @@ void main()
                 break;
         }
     }
-    return;
+    return 0;
 }
